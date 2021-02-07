@@ -17,4 +17,14 @@ class SessionsController < ApplicationController
   	session[:user_id] = nil
     redirect_to root_url, notice: "Logged out!"
   end
+
+  def changeToEN
+    I18n.locale = :en
+    redirect_to root_url, notice: "Changed to English"
+  end
+
+  def changeToFA
+    I18n.locale = :fa
+    redirect_to root_url, notice: "Changed to Persian"
+  end
 end

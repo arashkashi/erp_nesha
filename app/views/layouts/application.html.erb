@@ -1,16 +1,40 @@
 <!DOCTYPE html>
-<html>
+
+<% if I18n.locale == :en %>
+<html dir="ltr">
+<% else%>
+<html dir="rtl">
+<% end %> 
   <head>
     <title>Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% if I18n.locale == :en %>
+    <%= stylesheet_link_tag 'application_en', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel='stylesheet' id='bootstrap-css' href='../stylesheets/bootstrap.css' type='text/css' />
+
+    <% else %>
+
+    <link rel='stylesheet' id='bootstrap-rtl-css' href='../stylesheets/bootstrap.rtl.css' type='text/css' />
+        <%= stylesheet_link_tag 'application_fa', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% end %>
+    
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= link_to "EN", change_to_en_path %> |
+    <%= link_to "FA", change_to_fa_path %>
+
+    <%= I18n.locale %>
+  
+    <p><%= t('hello') %></p>
+    
+    <p></p>
+
     <% if session[:user_id] -%>
     <%= link_to 'Logout', :logout %>
     <hr>
