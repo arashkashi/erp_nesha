@@ -17,9 +17,11 @@
     <%= link_to "FA", change_to_fa_path %> |
 
     <% if session[:user_id] -%>
-    <%= link_to 'Logout', :logout %>
-    <hr>
+    <%= link_to 'Logout', :logout %> |
     <% end -%>
+    <%= User.find(session[:user_id]).name %>
+
+    <hr>
     <%= yield %>
   </body>
 </html>

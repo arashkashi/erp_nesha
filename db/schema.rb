@@ -10,9 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_043657) do
+ActiveRecord::Schema.define(version: 2021_02_07_192333) do
+
+# Could not dump table "customers" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
 
 # Could not dump table "users" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
 
+  add_foreign_key "customers", "users"
 end
