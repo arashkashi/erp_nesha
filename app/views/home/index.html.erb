@@ -1,7 +1,10 @@
 
 <% if logged_in? %>
 	<h1>Main Menu:</h1>
-	<%= link_to "Customers", customers_path %>
+	<%= link_to "Customers", customers_path %> <br>
+	<%= link_to "Pipe Types", pipe_types_path %> <br>
+	<%= link_to "Pipe Store Input", pipe_store_inputs_path %> <br>
+	<%= link_to "Pipe Store Output", pipe_store_outputs_path %>
 <% else %>
 	<h1>Welcome</h1>
 	<%= link_to 'Sign up', new_user_path %>

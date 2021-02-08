@@ -10,13 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_07_192333) do
+ActiveRecord::Schema.define(version: 2021_02_08_150716) do
 
 # Could not dump table "customers" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
+
+# Could not dump table "order_items" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
+
+# Could not dump table "orders" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
+
+# Could not dump table "pipe_store_inputs" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
+
+# Could not dump table "pipe_store_outputs" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
+
+# Could not dump table "pipe_types" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
 
 # Could not dump table "users" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
 
   add_foreign_key "customers", "users"
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "pipe_types"
+  add_foreign_key "orders", "customers"
+  add_foreign_key "orders", "users"
+  add_foreign_key "pipe_store_inputs", "pipe_types"
+  add_foreign_key "pipe_store_inputs", "users"
+  add_foreign_key "pipe_store_outputs", "pipe_types"
+  add_foreign_key "pipe_store_outputs", "users"
+  add_foreign_key "pipe_types", "users"
 end

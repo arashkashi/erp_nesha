@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :pipe_store_outputs
+  resources :pipe_store_inputs
+  resources :order_items
+  resources :orders
+  resources :pipe_types
   resources :customers
   root 'home#index'
   resources :sessions, only: [:new, :create, :destroy]
