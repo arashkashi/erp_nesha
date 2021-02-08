@@ -13,14 +13,15 @@
   </head>
 
   <body>
-    <%= link_to "EN", change_to_en_path %> |
-    <%= link_to "FA", change_to_fa_path %> |
+    <%#
+    <%= link_to "EN", change_to_en_path %> 
+    <%# 
+    <%= link_to "FA", change_to_fa_path %> 
 
-    <% if session[:user_id] -%>
-    <%= link_to 'Logout', :logout %> |
-    <% end -%>
-    <% if logged_in? %>
-      <%= current_user.name %>
+
+    <% if logged_in? -%>
+    <%= link_to 'Logout', :logout, :style => 'float: right' %>
+    <%= link_to current_user.name, root_path %>
     <% end %>
 
     <hr>
