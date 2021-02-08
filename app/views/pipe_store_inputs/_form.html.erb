@@ -1,0 +1,32 @@
+<%= form_with(model: pipe_store_input) do |form| %>
+  <% if pipe_store_input.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pipe_store_input.errors.count, "error") %> prohibited this pipe_store_input from being saved:</h2>
+
+      <ul>
+        <% pipe_store_input.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pipe_type_id %>
+    <%= form.collection_select :pipe_type_id, PipeType.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Amount(m)" %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="field" style="display: none;">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, value: current_user.id, readonly: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

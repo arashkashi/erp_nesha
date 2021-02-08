@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pipe_type.user_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pipe_type.name %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @pipe_type.weight %>
+</p>
+
+<%= link_to 'Edit', edit_pipe_type_path(@pipe_type) %> |
+<%= link_to 'Back', pipe_types_path %>

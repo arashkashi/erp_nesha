@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= Customer.find(@order.customer_id).name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@order.user_id).name %>
+</p>
+
+<p>
+  <strong>Meta:</strong>
+  <%= @order.meta %>
+</p>
+
+<%= link_to t('add_order_item', default: 'Add Order Item'), new_order_item_path %> |
+<%= link_to t('edit', default: 'Edit'), edit_order_path(@order) %> |
+<%= link_to t('back', default: 'Back'), orders_path %>

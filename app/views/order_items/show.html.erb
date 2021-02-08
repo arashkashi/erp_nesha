@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pipe type:</strong>
+  <%= PipeType.find(@order_item.pipe_type_id).name %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @order_item.amount %>
+</p>
+
+<p style="display: none;">
+  <strong>Order:</strong>
+  <%= @order_item.order_id %>
+</p>
+
+<%= link_to 'Edit', edit_order_item_path(@order_item) %> |
+<%= link_to 'Back', order_items_path %>

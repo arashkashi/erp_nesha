@@ -1,10 +1,10 @@
-<%= form_with(model: customer) do |form| %>
-  <% if customer.errors.any? %>
+<%= form_with(model: order) do |form| %>
+  <% if order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
       <ul>
-        <% customer.errors.each do |error| %>
+        <% order.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -17,18 +17,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :meta %>
-    <%= form.text_field :meta %>
+    <%= form.label :customer_id %>
+    <%= form.collection_select :customer_id, Customer.all, :id, :name %>
   </div>
 
   <div class="field" style="display: none">
     <%= form.label :user_id %>
     <%= form.text_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meta %>
+    <%= form.text_field :meta %>
   </div>
 
   <div class="actions">

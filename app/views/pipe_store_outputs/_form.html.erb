@@ -1,0 +1,37 @@
+<%= form_with(model: pipe_store_output) do |form| %>
+  <% if pipe_store_output.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pipe_store_output.errors.count, "error") %> prohibited this pipe_store_output from being saved:</h2>
+
+      <ul>
+        <% pipe_store_output.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pipe_type_id %>
+    <%= form.text_field :pipe_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_item_id %>
+    <%= form.collection_select :order_item_id, OrderItem.all, :id, :amount %>
+  </div>
+
+  <div class="field" style="display: none">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

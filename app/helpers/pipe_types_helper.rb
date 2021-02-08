@@ -1,0 +1,2 @@
+module PipeTypesHelper
+end

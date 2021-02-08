@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pipe Types</h1>
+<hr>
+
+<%= link_to 'New Pipe Type', new_pipe_type_path %>
+<hr>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Weight</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pipe_types.each do |pipe_type| %>
+      <tr>
+        <td><%= pipe_type.name %></td>
+        <td><%= pipe_type.weight %></td>
+        <td><%= User.find(pipe_type.user_id).name %></td>
+        <td><%= link_to 'Show', pipe_type %></td>
+        <td><%= link_to 'Edit', edit_pipe_type_path(pipe_type) %></td>
+        <td><%= link_to 'Destroy', pipe_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
