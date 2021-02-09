@@ -23,3 +23,5 @@
 <%= link_to t('add_order_item', default: 'Add Order Item'), new_order_item_path %> |
 <%= link_to t('edit', default: 'Edit'), edit_order_path(@order) %> |
 <%= link_to t('back', default: 'Back'), orders_path %>
+<hr>
+<%= render :template => "order_items/_list_by_order_id", :locals => { :order_items => OrderItem.where("order_id = ?", @order.id) } %>
