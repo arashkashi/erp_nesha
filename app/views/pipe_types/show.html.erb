@@ -2,7 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @pipe_type.user_id %>
+  <%= User.find(@pipe_type.user_id).name %>
 </p>
 
 <p>
