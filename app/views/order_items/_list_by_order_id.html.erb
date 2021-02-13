@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pipe type</th>
+      <th>Amount</th>
+      <th>Order</th>
+      <th><%= t('customer', default: 'Customer') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% order_items.each do |order_item| %>
+      <tr>
+        <td><%= PipeType.find(order_item.pipe_type_id).name %></td>
+        <td><%= order_item.amount %></td>
+        <td><%= Order.find(order_item.order_id).name %></td>
+        <td><%= Order.find(order_item.order_id).customer.name %></td>
+        <td><%= link_to 'Show', order_item %></td>
+        <td><%= link_to 'Edit', edit_order_item_path(order_item) %></td>
+        <td><%= link_to 'Destroy', order_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
