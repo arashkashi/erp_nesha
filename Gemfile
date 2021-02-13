@@ -27,6 +27,8 @@ gem 'capistrano-rails', '~> 1.6'
 gem 'capistrano-rails-console', require: false
 gem 'capistrano-passenger'
 gem 'capistrano-rbenv'
+gem 'ed25519', '~> 1.2'
+gem 'bcrypt_pbkdf', '~> 1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
