@@ -22,6 +22,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'capistrano', '~> 3.14'
+gem 'capistrano-rails', '~> 1.6'
+gem 'capistrano-rails-console', require: false
+gem 'capistrano-passenger'
+gem 'capistrano-rbenv'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
