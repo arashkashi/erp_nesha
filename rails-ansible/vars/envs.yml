@@ -1,0 +1,10 @@
+---
+environment_vars:
+  TEST_NAME: ayyylmao
+  DATABASE_HOST: localhost
+  DATABASE_NAME: "{{ postgres_db_name }}"
+  DATABASE_USERNAME: "{{ postgres_db_user }}"
+  DATABASE_PASSWORD: "{{ postgres_db_password }}"
+
+  RAILS_MASTER_KEY: fb87dd0939b8f2948011258f831816fa
+  SECRET_KEY_BASE: 89575330581cf3abc0b8d53cc000b49a41ce31bfdb519a70eec72ca9d291e3a8ff5bd0d27273d015efe13e0ed627c44303422ed50f3fcc349a3fcbabbc2f6e1b
