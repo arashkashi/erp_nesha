@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Orders</h1>
+<h1><%= t('orders', default: "Orders") %></h1>
 
-<table>
+<table class="styled-table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Customer</th>
-      <th>User</th>
-      <th>Meta</th>
+      <th><%= t('order_name', default: "Name")%></th>
+      <th><%= t('customer', default: "Customer")%></th>
+      <th><%= t('user', default: "User")%></th>
+      <th><%= t('meta', default: "Meta")%></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +20,9 @@
         <td><%= Customer.find(order.customer_id).name %></td>
         <td><%= User.find(order.user_id).name %></td>
         <td><%= order.meta %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('show', default: "Show"), order %></td>
+        <td><%= link_to t('edit', default: "Edit"), edit_order_path(order) %></td>
+        <td><%= link_to t('destroy', default: "Destroy"), order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to t('new_order', default: "New Order"), new_order_path %>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html dir="rtl">
 
   <head>
     <title>Blog</title>
@@ -20,9 +20,10 @@
 
 
     <% if logged_in? -%>
-    <%= link_to 'Logout', :logout, :style => 'float: right' %>
-    <%= link_to current_user.name, root_path %>
+    <%= link_to t('logout', default: "Logout"), :logout, :style => 'float: right' %>
+    <%= link_to current_user.name, root_path, :style => 'float: left'  %>
     <% end %>
+    <br>
 
     <hr>
     <%= yield %>
