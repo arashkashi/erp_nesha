@@ -30,6 +30,7 @@ Assuming we use SQLite no need to change the rest.
 Edit RAILS_MASTER_KEY from '''app/config/master.key'''
 in '''master.key''' file in config folder.
 Edit SECRET_KEY_BASE after running '''EDITOR=vim rails credentials:edit'''
+What is does, on server, '''/etc/environment''' will set these variables
 ## Edit host.ini
 update the ip number
 ## Execute the provisioning command
@@ -82,6 +83,50 @@ rails assets:precompile RAILS_ENV=production
 
 get the secret
 RAILS_ENV=development rake secret 
+
+## Experiment
+use the server provision yaml
+used create user
+Error: Could not find rake-13.0.3 in any of the sources ->tried on deploy: bundle install --path vendor/cache -> found out -> *passenger-config restart-app* we could also do ''' bundle install --path ~ ''' for deploy user to have the bundle in a shared folder not to install all gems with each release
+Error: Missing `secret_key_base` for 'production' environment -> to fix: in '''vim /etc/environment''' and add '''RAILS_ENV=production''' and then execute '''source /etc/environment'''
+
+maybe we have to set the envirnment '''rails credentials:edit --environment production'''
+it creates a master key the is in git ignore and also a secret_base_key which could be retriev from rails secret. maybe this is the process to be done on server
+
+try to set the variabls in the profile of the system "auto exec bac"
+create config/secrets/yml
+'''
+development:
+  secret_key_base: 45d07cfd3126c14dc8abf974c10022546b1a1d23c16485239ef1a09a299423d4e92968b3e7fd14f32177be066facdcea7d78ca54d22c394bf552ea15292262aa
+
+test:
+  secret_key_base: 1358fac7a48981852033f4d7a54c21a34272f92ca1ff35b7022de9131a1e13f5dde61b85fa439d9abfc53ba1a836e805be833b36fe0af6486641fd5a9cb69302
+
+production:
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+'''
+
+you may not need to add secrets.yml but add in the config to read the secret from the ENV variables
+so in '''config/envirnment/production'''
+
+'''
+Rails.application.configure do
+    ...
+    config.secret_key_base = ENV["SECRET_KEY_BASE"]
+    ...
+end
+'''
+
+you could also set a global ENV variable via editing
+'''sudo vi /etc/profile.d/http_proxy.sh'''
+e.g.
+'''
+export SECRET_KEY_BASE=b7085e52e29a38
+'''
+
+
+command '''rails secret'' generates a rails secret key
+
 
 
 
