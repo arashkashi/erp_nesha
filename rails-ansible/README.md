@@ -79,7 +79,7 @@ make sure the deploy production sqlite is out of cap folder to not be left behin
 
 run bundle exec rails db:migrate manually 
 
-rails assets:precompile RAILS_ENV=production
+
 
 get the secret
 RAILS_ENV=development rake secret 
@@ -89,6 +89,24 @@ use the server provision yaml
 used create user
 Error: Could not find rake-13.0.3 in any of the sources ->tried on deploy: bundle install --path vendor/cache -> found out -> *passenger-config restart-app* we could also do ''' bundle install --path ~ ''' for deploy user to have the bundle in a shared folder not to install all gems with each release
 Error: Missing `secret_key_base` for 'production' environment -> to fix: in '''vim /etc/environment''' and add '''RAILS_ENV=production''' and then execute '''source /etc/environment'''
+AFTER PUTTING THE "SECRET" and "KEY" both in http_proxy problem of secret key seem to have disappeared
+'''
+export SECRET_KEY_BASE=92f99cdef0ceed5c663e3a66b79
+export RAILS_MASTER_KEY=5d7910cc12e4f4dbb
+'''
+you could also set a global ENV variable via editing
+'''sudo vi /etc/profile.d/http_proxy.sh'''
+e.g.
+'''
+export SECRET_KEY_BASE=b7085e52e29a38
+'''
+
+if you get a 500 error with no log :
+rails assets:precompile RAILS_ENV=production
+
+turn the config/environment/production.rb ==>log level to :debug to get more information
+
+and then if the asset problem is still there, restart nginx
 
 maybe we have to set the envirnment '''rails credentials:edit --environment production'''
 it creates a master key the is in git ignore and also a secret_base_key which could be retriev from rails secret. maybe this is the process to be done on server
@@ -117,12 +135,6 @@ Rails.application.configure do
 end
 '''
 
-you could also set a global ENV variable via editing
-'''sudo vi /etc/profile.d/http_proxy.sh'''
-e.g.
-'''
-export SECRET_KEY_BASE=b7085e52e29a38
-'''
 
 
 command '''rails secret'' generates a rails secret key
