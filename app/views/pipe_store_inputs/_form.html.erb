@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :pipe_type_id %>
+    <%= form.label t('type', default: 'Type') %>
     <%= form.collection_select :pipe_type_id, PipeType.all, :id, :name %>
   </div>
 
   <div class="field">
-    <%= form.label "Amount(m)" %>
+    <%= form.label t('amount', default:"Amount")+'('+t('meter')+')' %>
     <%= form.text_field :amount %>
   </div>
 
@@ -27,6 +27,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('record', default: 'Record') %>
   </div>
 <% end %>

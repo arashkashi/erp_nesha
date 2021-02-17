@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pipe Types</h1>
+<h1><%= t('pipe_types', default: "Pipe Types") %></h1>
 <hr>
 
-<%= link_to 'New Pipe Type', new_pipe_type_path %>
+<%= link_to t('new_pipe_type', default: "New Pipe Type"), new_pipe_type_path %>
 <hr>
 
-<table>
+<table class="styled-table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th>User</th>
+      <th><%= t('name', default: "Name") %></th>
+      <th><%= t('indicator', default: "Indicator") %></th>
+      <th><%= t('user', default: "User") %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
