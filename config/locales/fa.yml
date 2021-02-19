@@ -34,4 +34,9 @@ fa:
   record: "ثبت"
   back: "بازگشت"
   new_pipe_store_input: "ثبت ورود لوله به انبار"
+  order_item: "مورد سفارش"
+  new_pipe_store_output: "ارسال لوله از انبار"
+  pipe_store_outputs: "ارسال لوله از انبار"
+  nil: "هیچ"
+  new_pipe_store_output: "ثبت جدید خروج لوله از انبار"
 

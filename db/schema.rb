@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_08_153522) do
+ActiveRecord::Schema.define(version: 2021_02_08_150716) do
 
 # Could not dump table "customers" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_02_08_153522) do
 #   Unknown type 'uuid' for column 'id'
 
 # Could not dump table "pipe_store_outputs" because of following StandardError
-#   Unknown type '' for column 'id'
+#   Unknown type 'uuid' for column 'id'
 
 # Could not dump table "pipe_types" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_02_08_153522) do
   add_foreign_key "order_items", "pipe_types"
   add_foreign_key "orders", "customers"
   add_foreign_key "orders", "users"
+  add_foreign_key "pipe_store_inputs", "order_items"
   add_foreign_key "pipe_store_inputs", "pipe_types"
   add_foreign_key "pipe_store_inputs", "users"
   add_foreign_key "pipe_store_outputs", "order_items"
