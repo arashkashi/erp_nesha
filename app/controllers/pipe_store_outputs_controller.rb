@@ -3,7 +3,7 @@ class PipeStoreOutputsController < ApplicationController
 
   # GET /pipe_store_outputs or /pipe_store_outputs.json
   def index
-    @pipe_store_outputs = PipeStoreOutput.all
+    @pipe_store_outputs = PipeStoreOutput.all.order("created_at DESC")
   end
 
   # GET /pipe_store_outputs/1 or /pipe_store_outputs/1.json
@@ -64,6 +64,6 @@ class PipeStoreOutputsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pipe_store_output_params
-      params.require(:pipe_store_output).permit(:pipe_type_id, :amount, :user_id)
+      params.require(:pipe_store_output).permit(:pipe_type_id, :amount, :order_item_id, :user_id)
     end
 end

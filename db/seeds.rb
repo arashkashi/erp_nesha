@@ -31,8 +31,8 @@ last_customer = Customer.all.last
 
 orders_attribute = [
 	{name: "Kerman", customer_id: first_customer['id'], user_id: admin['id'], meta:{}.to_json},
-	{name: "Chabahar", customer_id: last_customer['id'], user_id: admin['id'], meta:{}.to_json},
+	{name: "Chabahar", customer_id: last_customer['id'], user_id: admin['id'], meta:{}.to_json}
 ]
 
-Orders.create(orders_attribute)
+Order.create(orders_attribute)
 

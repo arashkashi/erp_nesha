@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Pipe type:</strong>
-  <%= @pipe_store_output.pipe_type_id %>
+  <strong><%= t('type', default: "Type") %></strong>
+  <%= PipeType.find(@pipe_store_output.pipe_type_id).name %>
 </p>
 
 <p>
-  <strong>Amount:</strong>
+  <strong><%= t('amount-m', default: "Amount (m)") %></strong>
   <%= @pipe_store_output.amount %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @pipe_store_output.user_id %>
+  <strong><%= t('user', default: "User") %></strong>
+  <%= User.find(@pipe_store_output.user_id).name %>
 </p>
 
 <%= link_to 'Edit', edit_pipe_store_output_path(@pipe_store_output) %> |

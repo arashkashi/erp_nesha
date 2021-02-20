@@ -3,3 +3,7 @@
 <%= render 'form', pipe_store_output: @pipe_store_output %>
 
 <%= link_to 'Back', pipe_store_outputs_path %>
+
+<hr>
+
+<%= render :template => "pipe_store_outputs/_show_list", :locals => { :pipe_store_outputs => PipeStoreOutput.all.order("created_at DESC").first(10), :title => t('10_last_records', default: "10 last Records") } %>

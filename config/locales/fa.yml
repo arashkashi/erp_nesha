@@ -39,4 +39,7 @@ fa:
   pipe_store_outputs: "ارسال لوله از انبار"
   nil: "هیچ"
   new_pipe_store_output: "ثبت جدید خروج لوله از انبار"
+  amount-m: "مقدار(متر)"
+  editing_pipe_store_output: "ویرایش خروجی لوله از انبار"
+  10_last_records: "۱۰ ثبت آخر"
 

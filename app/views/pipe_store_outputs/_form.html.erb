@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label t('order_item', default: "Order Item") %>
-    <%= form.text_field :order_item_id %>
+    <%= form.collection_select :order_item_id, OrderItem.all, :id, :orderItemSignature, :include_blank => true %>
   </div>
 
   <div class="field" style="display: none">

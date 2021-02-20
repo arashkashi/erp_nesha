@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('name', default: "Name") %>:</strong>
   <%= @customer.name %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong><%= t('phone', default: "Phone") %>:</strong>
   <%= @customer.phone %>
 </p>
 
 <p>
-  <strong>Meta:</strong>
+  <strong><%= t('meta', default: "Meta") %>:</strong>
   <%= @customer.meta %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @customer.user_id %>
+  <strong><%= t('user', default: "User") %>:</strong>
+  <%= User.find(@customer.user_id).name %>
 </p>
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |

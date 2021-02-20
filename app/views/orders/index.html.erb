@@ -2,6 +2,8 @@
 
 <h1><%= t('orders', default: "Orders") %></h1>
 
+<%= link_to t('new_order', default: "New Order"), new_order_path %>
+
 <table class="styled-table">
   <thead>
     <tr>
@@ -30,4 +32,4 @@
 
 <br>
 
-<%= link_to t('new_order', default: "New Order"), new_order_path %>
+

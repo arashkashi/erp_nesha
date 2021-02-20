@@ -64,6 +64,6 @@ class PipeStoreInputsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pipe_store_input_params
-      params.require(:pipe_store_input).permit(:pipe_type_id, :amount, :user_id)
+      params.require(:pipe_store_input).permit(:pipe_type_id, :amount, :order_item_id, :user_id)
     end
 end

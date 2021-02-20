@@ -1,8 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1><%= t('pipe_store_outputs', default: "Pipe Store Outputs") %></h1>
-
-<%= link_to t('new_pipe_store_output', default: 'New Pipe Store Output'), new_pipe_store_output_path %>
+<h1><%= title %></h1>
 
 <table class="styled-table">
   <thead>
@@ -16,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @pipe_store_outputs.each do |pipe_store_output| %>
+    <% pipe_store_outputs.each do |pipe_store_output| %>
       <tr>
         <td><%= PipeType.find(pipe_store_output.pipe_type_id).name %></td>
         <td><%= pipe_store_output.amount %></td>
@@ -31,5 +27,3 @@
 </table>
 
 <br>
-
-

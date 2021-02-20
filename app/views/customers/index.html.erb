@@ -2,6 +2,9 @@
 
 <h1><%= t('customers', default: "Customers") %></h1>
 
+<%= link_to t('new_customer', default: "New Customer"), new_customer_path %> <br>
+<%= link_to t('orders', default: "Orders"), orders_path %>
+
 <table class='styled-table'>
   <thead>
     <tr>
@@ -30,5 +33,4 @@
 
 <br>
 
-<%= link_to t('new_customer', default: "New Customer"), new_customer_path %> <br>
-<%= link_to t('orders', default: "Orders"), orders_path %>
+
