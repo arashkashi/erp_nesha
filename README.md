@@ -30,3 +30,11 @@ Problem faced: I initially created the pipe_store_output while forgetting the or
 
 then I had another issue. even though in my migration I allowed for an output not to be associated with order_item_id, when saving with no item_id I would get an error, that order_item_id attribute is required. This is how to fix this
 1. belongs_to: order_item, :optional => true
+
+Today I was reading on how to integrate persian Calendar into Rails, there is no proper gem, with documentations and testing available, so I have to take the ownership of any code I bring my self, the question "how to add third party application librariy file to rails", of course the proper way.
+
+I came across this good article that exmplains nicely about '''require''' stuff
+https://andre.arko.net/2015/04/28/how-does-bundler-work-anyway/
+
+unsolved problems:
+persian calendar seems to be a problematic issue.
