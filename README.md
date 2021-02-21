@@ -36,5 +36,10 @@ Today I was reading on how to integrate persian Calendar into Rails, there is no
 I came across this good article that exmplains nicely about '''require''' stuff
 https://andre.arko.net/2015/04/28/how-does-bundler-work-anyway/
 
+another issue happened when I deployed a new version to serer and even though I had localization and dir='rtl' set, I still saw the site showing as the enflish version. 
+I tried the following things and 
+first: I used the assets recompile, it didnt solve the problem
+second: I restarted the passenger '''passenger-config restart-app''' and it worked, seems to be some chaching there 
+
 unsolved problems:
 persian calendar seems to be a problematic issue.
