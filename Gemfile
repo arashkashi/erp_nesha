@@ -30,6 +30,8 @@ gem 'capistrano-rbenv'
 gem 'ed25519', '~> 1.2'
 gem 'bcrypt_pbkdf', '~> 1'
 
+gem 'rails_pdate'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

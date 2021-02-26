@@ -41,5 +41,7 @@ I tried the following things and
 first: I used the assets recompile, it didnt solve the problem
 second: I restarted the passenger '''passenger-config restart-app''' and it worked, seems to be some chaching there 
 
+sometimes the '''rails c''' freezes and doesnt work, for this you have to run this command on terminal '''spring stop'''ref. '''https://stackoverflow.com/questions/24276033/rails-console-doesnt-start'''
+
 unsolved problems:
 persian calendar seems to be a problematic issue.
