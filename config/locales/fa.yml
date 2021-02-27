@@ -20,6 +20,7 @@ fa:
   destroy: "حذف"
   new_customer: "مشتری جدید"
   orders: "سفارشات"
+  order: "سفارش"
   customer: "مشتری"
   order_name: "نام سفارش"
   new_order: "سفارش جدید"
@@ -46,4 +47,6 @@ fa:
   roles: "نقشها"
   users: "کاربرها"
   new_user: "کاربر جدید"
+  add_order_item: "اضافه کردن سفارش جدید"
+  empty_order_items: "موارد سفارش خالی است."
 

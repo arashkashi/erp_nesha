@@ -1,22 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= t('order', default: "order") %></h1>
+
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('name', default: "Name") %>:</strong>
   <%= @order.name %>
 </p>
 
 <p>
-  <strong>Customer:</strong>
+  <strong><%= t('customer', default: "Customer") %>:</strong>
   <%= Customer.find(@order.customer_id).name %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong><%= t('user', default: "User") %>:</strong>
   <%= User.find(@order.user_id).name %>
 </p>
 
 <p>
-  <strong>Meta:</strong>
+  <strong><%= t('meta', default: "Meta") %>:</strong>
   <%= @order.meta %>
 </p>
 
