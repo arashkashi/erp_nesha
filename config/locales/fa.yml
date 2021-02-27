@@ -49,4 +49,9 @@ fa:
   new_user: "کاربر جدید"
   add_order_item: "اضافه کردن سفارش جدید"
   empty_order_items: "موارد سفارش خالی است."
+  projects: "پروژه ها"
+  new_project: "پروژه جدید"
+  project: "پروژه"
+  delivered: "ارسالی"
+  editing_project: "ویرایش پروژه"
 

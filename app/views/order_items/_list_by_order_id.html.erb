@@ -3,13 +3,14 @@
 <% if order_items.empty? %>
 <h1><%= t('empty_order_items', default: "Order Item is empty!") %></h1>
 <% else %>
-<table>
+<table class="styled-table">
   <thead>
     <tr>
-      <th>Pipe type</th>
-      <th>Amount</th>
-      <th>Order</th>
+      <th><%= t('type', default: "Pipe Type") %></th>
+      <th><%= t('meter', default: "Meter") %></th>
+      <th><%= t('project', default: "Porject") %></th>
       <th><%= t('customer', default: 'Customer') %></th>
+      <th><%= t('delivered', default: 'Delivered') %>(<%= t('meter')%>)</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,9 +22,10 @@
         <td><%= order_item.amount %></td>
         <td><%= Order.find(order_item.order_id).name %></td>
         <td><%= Order.find(order_item.order_id).customer.name %></td>
-        <td><%= link_to 'Show', order_item %></td>
-        <td><%= link_to 'Edit', edit_order_item_path(order_item) %></td>
-        <td><%= link_to 'Destroy', order_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= PipeStoreOutput.sum_pipe_out_by_order_item_id(order_item.id) %></td>
+        <td><%= link_to t('show'), order_item %></td>
+        <td><%= link_to t('edit'), edit_order_item_path(order_item) %></td>
+        <td><%= link_to t('destroy'), order_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

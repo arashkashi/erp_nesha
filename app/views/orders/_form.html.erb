@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label t('name') %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :customer_id %>
+    <%= form.label t('customer') %>
     <%= form.collection_select :customer_id, Customer.all, :id, :name %>
   </div>
 
@@ -27,7 +27,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :meta %>
+    <%= form.label t('meta') %>
     <%= form.text_field :meta %>
   </div>
 
