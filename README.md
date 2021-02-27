@@ -43,5 +43,7 @@ second: I restarted the passenger '''passenger-config restart-app''' and it work
 
 sometimes the '''rails c''' freezes and doesnt work, for this you have to run this command on terminal '''spring stop'''ref. '''https://stackoverflow.com/questions/24276033/rails-console-doesnt-start'''
 
+sometimes things work in console ('''rails c''') and not the app, maybe you have to restart the server for it to understand. 
+
 unsolved problems:
 persian calendar seems to be a problematic issue.
