@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-<hr>
-  <strong>Roles:</strong>
+  <strong><%= t('name', default: "Name") %>:</strong>
+  <%= @user.name %> <br>
+  <strong><%= t('email', default: "Email") %>:</strong>
+  <%= @user.email %> <br>
+  <strong><%= t('roles', default: "Roles") %>:</strong>
   <%= @user.roles %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t('edit', default: "Edit"), edit_user_path(@user) %> |
+<%= link_to t('back', default: "Back"), users_path %>

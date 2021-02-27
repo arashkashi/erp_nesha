@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-admin=User.create({ name: "Seed User", email: 'admin@rubyonrails.com',
-               password: 'password', password_confirmation: 'password',
-               roles: {}.to_json
+admin=User.create({ name: "آرش کاشی", email: 'arashkashi@gmail.com',
+               password: '12345', password_confirmation: '12345',
+               roles: {}.to_json, is_admin: true, enabled: true
            })
 
 pipe_type_atrributes = [

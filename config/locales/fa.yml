@@ -43,4 +43,7 @@ fa:
   editing_pipe_store_output: "ویرایش خروجی لوله از انبار"
   10_last_records: "۱۰ ثبت آخر"
   date: "تاریخ"
+  roles: "نقشها"
+  users: "کاربرها"
+  new_user: "کاربر جدید"
 

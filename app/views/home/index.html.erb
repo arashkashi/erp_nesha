@@ -4,7 +4,12 @@
 	<%= link_to t('customers', default: "Customers"), customers_path %> <br>
 	<%= link_to t('pipe_types', default: "Pipe Types"), pipe_types_path %> <br>
 	<%= link_to t('pipe_store_input', default: "Pipe Store Input"), pipe_store_inputs_path %> <br>
-	<%= link_to t('pipe_store_output', default: "Pipe Store Output"), pipe_store_outputs_path %>
+	<%= link_to t('pipe_store_output', default: "Pipe Store Output"), pipe_store_outputs_path %><br>
+
+	<% if current_user.is_admin %>
+		<%= link_to t('users', default: "Users"), users_path %>
+	<% end %>
+
 <% else %>
 	<h1><%= t('welcome', default: 'Welcome') %></h1>
 	<%= link_to t('sign_up', default:"Sign up"), new_user_path %>
