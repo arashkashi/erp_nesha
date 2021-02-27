@@ -2,11 +2,14 @@
 
 <h1><%= t('pipe_store_inputs', default: "Pipe Store Inputs") %></h1>
 
+<%= link_to t('new_input'), new_pipe_store_input_path %>
+
 <table class="styled-table">
   <thead>
     <tr>
       <th><%= t('type', default: "Pipe Type") %></th>
       <th><%= t('amount', default: "Amount")  %> (<%= t('meter', default:"meter") %>)</th>
+      <th><%= t('date') %></th>
       <th><%= t('user', default: "User") %></th>
       <th colspan="3"></th>
     </tr>
@@ -17,6 +20,7 @@
       <tr>
         <td><%= PipeType.find(pipe_store_input.pipe_type_id).name %></td>
         <td><%= pipe_store_input.amount %></td>
+        <td><%= pipe_store_input.created_at.to_date.to_pdate %> </td>
         <td><%= User.find(pipe_store_input.user_id).name %></td>
         <td><%= link_to t('show'), pipe_store_input %></td>
         <td><%= link_to t('edit'), edit_pipe_store_input_path(pipe_store_input) %></td>
@@ -28,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Pipe Store Input', new_pipe_store_input_path %>
+

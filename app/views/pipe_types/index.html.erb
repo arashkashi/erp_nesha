@@ -1,10 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= t('pipe_types', default: "Pipe Types") %></h1>
-<hr>
 
 <%= link_to t('new_pipe_type', default: "New Pipe Type"), new_pipe_type_path %>
-<hr>
 
 <table class="styled-table">
   <thead>
@@ -22,9 +20,9 @@
         <td><%= pipe_type.name %></td>
         <td><%= pipe_type.weight %></td>
         <td><%= User.find(pipe_type.user_id).name %></td>
-        <td><%= link_to 'Show', pipe_type %></td>
-        <td><%= link_to 'Edit', edit_pipe_type_path(pipe_type) %></td>
-        <td><%= link_to 'Destroy', pipe_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('show'), pipe_type %></td>
+        <td><%= link_to t('edit'), edit_pipe_type_path(pipe_type) %></td>
+        <td><%= link_to t('destroy'), pipe_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

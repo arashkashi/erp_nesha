@@ -1,6 +1,6 @@
-<h1>Editing Pipe Type</h1>
+<h1><%= t('editing_pipe_type') %></h1>
 
 <%= render 'form', pipe_type: @pipe_type %>
 
-<%= link_to 'Show', @pipe_type %> |
-<%= link_to 'Back', pipe_types_path %>
+<%= link_to t('show'), @pipe_type %> |
+<%= link_to t('back'), pipe_types_path %>

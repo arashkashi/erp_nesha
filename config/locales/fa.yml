@@ -56,4 +56,7 @@ fa:
   editing_project: "ویرایش پروژه"
   pipe_store: "انبار محصول"
   project_orders: "سفارشات پروژه"
+  new_order_item: "سفارش جدید"
+  editing_pipe_type: "ویرایش نوع لوله"
+  new_input: "ورودی جدید"
 
