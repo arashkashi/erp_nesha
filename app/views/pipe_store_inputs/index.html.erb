@@ -18,9 +18,9 @@
         <td><%= PipeType.find(pipe_store_input.pipe_type_id).name %></td>
         <td><%= pipe_store_input.amount %></td>
         <td><%= User.find(pipe_store_input.user_id).name %></td>
-        <td><%= link_to 'Show', pipe_store_input %></td>
-        <td><%= link_to 'Edit', edit_pipe_store_input_path(pipe_store_input) %></td>
-        <td><%= link_to 'Destroy', pipe_store_input, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('show'), pipe_store_input %></td>
+        <td><%= link_to t('edit'), edit_pipe_store_input_path(pipe_store_input) %></td>
+        <td><%= link_to t('destroy'), pipe_store_input, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
