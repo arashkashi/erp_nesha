@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'stores/products', to: 'stores#products', as: 'store_products'
+  get 'stores/raw_materials'
+  get 'stores/washers'
   resources :pipe_store_outputs
   resources :pipe_store_inputs
   resources :order_items

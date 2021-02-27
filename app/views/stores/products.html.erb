@@ -1,0 +1,23 @@
+<h1><%= t('pipe_store', default: "Pipe Store") %></h1>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th><%= t('type', default: "Pipe Type") %></th>
+      <th><%= t('amount', default: "Amount")  %> (<%= t('meter', default:"meter") %>)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pipe_types.each do |pipe_type| %>
+      <tr>
+        <td><%= pipe_type.name %></td>
+        <td><%= PipeStoreInput.sum_amount_by_pipe_type(pipe_type) - PipeStoreOutput.sum_amount_by_pipe_type(pipe_type) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

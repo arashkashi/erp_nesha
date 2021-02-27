@@ -24,7 +24,11 @@ class PipeStoreOutput < ApplicationRecord
   validates_with PipeStoreOutTypeValidator
   validates :order_item_id, presence: false
 
-  def self.sum_pipe_out_by_order_item_id(order_item_id)
+  def self.sum_amount_by_order_item_id(order_item_id)
   	PipeStoreOutput.where(order_item_id: order_item_id).sum(:amount)
+  end
+
+  def self.sum_amount_by_pipe_type(pipe_type)
+    PipeStoreOutput.where(pipe_type_id: pipe_type.id).sum(:amount)
   end
 end
