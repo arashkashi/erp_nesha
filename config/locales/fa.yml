@@ -59,4 +59,5 @@ fa:
   new_order_item: "سفارش جدید"
   editing_pipe_type: "ویرایش نوع لوله"
   new_input: "ورودی جدید"
+  total_nominal_weight_of_stored_pipes: "کل وزن نامی لوله های انبار"
 
