@@ -1,0 +1,32 @@
+<%= form_with(model: truck_scale_output) do |form| %>
+  <% if truck_scale_output.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(truck_scale_output.errors.count, "error") %> prohibited this truck_scale_output from being saved:</h2>
+
+      <ul>
+        <% truck_scale_output.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label t('project') %>
+    <%= form.collection_select :order_id, Order.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('kg') %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="field" style="display: none">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit t('record')%>
+  </div>
+<% end %>

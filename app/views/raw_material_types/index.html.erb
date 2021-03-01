@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Raw Material Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @raw_material_types.each do |raw_material_type| %>
+      <tr>
+        <td><%= raw_material_type.name %></td>
+        <td><%= raw_material_type.user_id %></td>
+        <td><%= link_to 'Show', raw_material_type %></td>
+        <td><%= link_to 'Edit', edit_raw_material_type_path(raw_material_type) %></td>
+        <td><%= link_to 'Destroy', raw_material_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Raw Material Type', new_raw_material_type_path %>

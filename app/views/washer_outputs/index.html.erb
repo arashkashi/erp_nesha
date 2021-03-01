@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Washer Outputs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Washer type</th>
+      <th>Amount</th>
+      <th>Order</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @washer_outputs.each do |washer_output| %>
+      <tr>
+        <td><%= washer_output.washer_type_id %></td>
+        <td><%= washer_output.amount %></td>
+        <td><%= washer_output.order_id %></td>
+        <td><%= washer_output.user_id %></td>
+        <td><%= link_to 'Show', washer_output %></td>
+        <td><%= link_to 'Edit', edit_washer_output_path(washer_output) %></td>
+        <td><%= link_to 'Destroy', washer_output, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Washer Output', new_washer_output_path %>

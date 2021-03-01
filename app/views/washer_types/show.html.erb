@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @washer_type.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @washer_type.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_washer_type_path(@washer_type) %> |
+<%= link_to 'Back', washer_types_path %>

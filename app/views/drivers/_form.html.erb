@@ -1,0 +1,42 @@
+<%= form_with(model: driver) do |form| %>
+  <% if driver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(driver.errors.count, "error") %> prohibited this driver from being saved:</h2>
+
+      <ul>
+        <% driver.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :truck %>
+    <%= form.text_field :truck %>
+  </div>
+
+  <div class="field">
+    <%= form.label :license %>
+    <%= form.text_field :license %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

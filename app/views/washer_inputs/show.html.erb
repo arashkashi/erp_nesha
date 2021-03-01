@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Washer type:</strong>
+  <%= @washer_input.washer_type_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @washer_input.amount %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @washer_input.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_washer_input_path(@washer_input) %> |
+<%= link_to 'Back', washer_inputs_path %>

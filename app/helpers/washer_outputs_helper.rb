@@ -1,0 +1,2 @@
+module WasherOutputsHelper
+end

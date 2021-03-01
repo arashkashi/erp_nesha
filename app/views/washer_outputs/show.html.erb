@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Washer type:</strong>
+  <%= @washer_output.washer_type_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @washer_output.amount %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @washer_output.order_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @washer_output.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_washer_output_path(@washer_output) %> |
+<%= link_to 'Back', washer_outputs_path %>

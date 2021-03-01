@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :drivers
+  resources :washer_inputs
+  resources :washer_outputs
+  resources :washer_types
+  resources :truck_scale_outputs
+  resources :raw_material_inputs
+  resources :raw_material_types
   get 'stores/products', to: 'stores#products', as: 'store_products'
   get 'stores/raw_materials'
   get 'stores/washers'

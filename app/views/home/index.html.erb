@@ -1,21 +1,40 @@
 
 <% if logged_in? %>
 	<h1><%= t('main_menu', default: "Main Menu") %></h1>
-	<%= link_to t('customers', default: "Customers"), customers_path %> 
-	<br>
-	<%= link_to t('pipe_types', default: "Pipe Types"), pipe_types_path %>
-	<br>
-	<%= link_to t('pipe_store_input', default: "Pipe Store Input"), pipe_store_inputs_path %>
-	<br>
-	<%= link_to t('pipe_store_output', default: "Pipe Store Output"), pipe_store_outputs_path %>
-
-	<br>
-	<% if current_user.is_admin %>
-		<%= link_to t('users', default: "Users"), users_path %>
-	<% end %>
 	<hr>
-	<%= link_to t('pipe_store', default: "Pipe Store"), store_products_path %>
-
+	<h3><%= t('base_info') %></h3>
+	<% if current_user.is_admin %>
+	<%= link_to t('users'), users_path %>
+	<br>
+	<% end %>
+	<%= link_to t('customers'), customers_path %> 
+	<br>
+	<%= link_to t('pipe_types'), pipe_types_path %>
+	<br>
+	<%= link_to t('washer_types'), washer_types_path %>
+	<br>
+	<%= link_to t('raw_material_types'), raw_material_types_path %>
+	<hr>	
+	<h3><%= t('record_pipe_in_out') %></h3>
+	<%= link_to t('pipe_store_input'), pipe_store_inputs_path %>
+	<br>
+	<%= link_to t('pipe_store_output'), pipe_store_outputs_path %>
+	<hr>
+	<h3><%= t('record_washer_in_out') %></h3>
+	<%= link_to t('washer_inputs'), washer_inputs_path %>
+	<br>
+	<%= link_to t('washer_outputs'), washer_outputs_path %>
+	<hr>
+	<h3><%= t('record_raw_material_in_out') %></h3>
+	<%= link_to t('truck_scale_outputs'), truck_scale_outputs_path %>
+	<br>
+	<%= link_to t('raw_material_inputs'), raw_material_inputs_path %>
+	<hr>
+	<h3><%= t('transportation') %></h3>
+	<%= link_to t('drivers'), drivers_path %>
+	<hr>
+	<%= link_to t('dashboard'), store_products_path %>
+	<br>
 <% else %>
 	<h1><%= t('welcome', default: 'Welcome') %></h1>
 	<%= link_to t('sign_up', default:"Sign up"), new_user_path %>

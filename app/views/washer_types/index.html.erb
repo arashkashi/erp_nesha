@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Washer Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @washer_types.each do |washer_type| %>
+      <tr>
+        <td><%= washer_type.name %></td>
+        <td><%= washer_type.user_id %></td>
+        <td><%= link_to 'Show', washer_type %></td>
+        <td><%= link_to 'Edit', edit_washer_type_path(washer_type) %></td>
+        <td><%= link_to 'Destroy', washer_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Washer Type', new_washer_type_path %>

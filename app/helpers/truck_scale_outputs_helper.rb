@@ -1,0 +1,2 @@
+module TruckScaleOutputsHelper
+end

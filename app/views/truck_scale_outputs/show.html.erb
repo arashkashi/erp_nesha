@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('project') %>:</strong>
+  <%= Order.find(@truck_scale_output.order_id).name %>
+</p>
+
+<p>
+  <strong><%= t('amount') %>:</strong>
+  <%= @truck_scale_output.amount %>
+</p>
+
+<p>
+  <strong><%= t('user') %>:</strong>
+  <%= User.find(@truck_scale_output.user_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_truck_scale_output_path(@truck_scale_output) %> |
+<%= link_to 'Back', truck_scale_outputs_path %>
