@@ -2,7 +2,7 @@
 
 <h1>Raw Material Inputs</h1>
 
-<table>
+<table class="styled-table">
   <thead>
     <tr>
       <th>Raw material type</th>
@@ -15,9 +15,9 @@
   <tbody>
     <% @raw_material_inputs.each do |raw_material_input| %>
       <tr>
-        <td><%= raw_material_input.raw_material_type_id %></td>
+        <td><%= RawMaterialType.find(raw_material_input.raw_material_type_id).name %></td>
         <td><%= raw_material_input.amount %></td>
-        <td><%= raw_material_input.user_id %></td>
+        <td><%= User.find(raw_material_input.user_id).name %></td>
         <td><%= link_to 'Show', raw_material_input %></td>
         <td><%= link_to 'Edit', edit_raw_material_input_path(raw_material_input) %></td>
         <td><%= link_to 'Destroy', raw_material_input, method: :delete, data: { confirm: 'Are you sure?' } %></td>

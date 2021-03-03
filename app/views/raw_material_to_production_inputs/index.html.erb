@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Raw Material To Production Inputs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Raw material type</th>
+      <th>Amount</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @raw_material_to_production_inputs.each do |raw_material_to_production_input| %>
+      <tr>
+        <td><%= raw_material_to_production_input.raw_material_type_id %></td>
+        <td><%= raw_material_to_production_input.amount %></td>
+        <td><%= raw_material_to_production_input.user_id %></td>
+        <td><%= link_to 'Show', raw_material_to_production_input %></td>
+        <td><%= link_to 'Edit', edit_raw_material_to_production_input_path(raw_material_to_production_input) %></td>
+        <td><%= link_to 'Destroy', raw_material_to_production_input, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Raw Material To Production Input', new_raw_material_to_production_input_path %>

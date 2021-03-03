@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_122151) do
+ActiveRecord::Schema.define(version: 2021_03_01_151218) do
 
 # Could not dump table "customers" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 2021_02_28_122151) do
 #   Unknown type 'uuid' for column 'id'
 
 # Could not dump table "raw_material_inputs" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
+
+# Could not dump table "raw_material_to_production_inputs" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
 
 # Could not dump table "raw_material_types" because of following StandardError
@@ -69,6 +72,8 @@ ActiveRecord::Schema.define(version: 2021_02_28_122151) do
   add_foreign_key "pipe_types", "users"
   add_foreign_key "raw_material_inputs", "raw_material_types"
   add_foreign_key "raw_material_inputs", "users"
+  add_foreign_key "raw_material_to_production_inputs", "raw_material_types"
+  add_foreign_key "raw_material_to_production_inputs", "users"
   add_foreign_key "raw_material_types", "users"
   add_foreign_key "truck_scale_outputs", "orders"
   add_foreign_key "truck_scale_outputs", "users"

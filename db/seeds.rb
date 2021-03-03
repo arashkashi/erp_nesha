@@ -16,7 +16,17 @@ admin=User.create({ name: "آرش کاشی", email: 'arashkashi@gmail.com',
 # Pipe Types
 pipe_type_atrributes = [
   { name: "D200/31.55", user_id: admin['id'], weight: 2 },
-  { name: "D300/31.55", user_id: admin['id'], weight: 5 }
+  { name: "D250/31.55", user_id: admin['id'], weight: 5 },
+  { name: "D315/31.55", user_id: admin['id'], weight: 5 },
+  { name: "D400/31.55", user_id: admin['id'], weight: 5 },
+  { name: "D600/31.55", user_id: admin['id'], weight: 5 },
+  { name: "D800/31.55", user_id: admin['id'], weight: 5 },
+  { name: "D1000/31.55", user_id: admin['id'], weight: 5 },
+  { name: "D1200/31.55", user_id: admin['id'], weight: 5 },
+  { name: "D1600/31.55", user_id: admin['id'], weight: 5 },
+  { name: "D1800/31.55", user_id: admin['id'], weight: 5 },
+  { name: "D2000/31.55", user_id: admin['id'], weight: 5 },
+  { name: "D2500/31.55", user_id: admin['id'], weight: 5 },
 ]
 PipeType.create(pipe_type_atrributes)
 
@@ -45,7 +55,9 @@ Order.create(orders_attribute)
 raw_types_att = [
 	{name: "اروین", user_id: admin['id']},
 	{name: "امیر کبیر", user_id: admin['id']},
-	{name: "جم", user_id: admin['id']}
+	{name: "جم", user_id: admin['id']},
+	{name: "ضایعات کاروگیت", user_id: admin['id']},
+	{name: "ضایعات اسپیرال", user_id: admin['id']}
 ]
 
 RawMaterialType.create(raw_types_att)

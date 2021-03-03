@@ -8,7 +8,18 @@ class StoresController < ApplicationController
   		temp = temp + (PipeStoreInput.sum_amount_by_pipe_type(p_type) - PipeStoreOutput.sum_amount_by_pipe_type(p_type))*p_type.weight
   	end
 
-  	@total_w = temp
+  	@total_pipe_weight = temp
+
+    @raw_material_types = RawMaterialType.all
+
+    temp = 0
+
+    @raw_material_types.each do |r_type|
+      temp = temp + RawMaterialInput.sum_amount_by_raw_type(r_type) - RawMaterialToProductionInput.sum_amount_by_raw_type(r_type)
+    end
+
+    @total_raw_weight = temp
+
   end
 
   def raw_materials

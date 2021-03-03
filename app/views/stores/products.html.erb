@@ -18,8 +18,37 @@
   </tbody>
 </table>
 
-<h2><%= t('total_nominal_weight_of_stored_pipes') %>:<%= @total_w.to_s + t('kg', default: 'kg') %> </h2>
+<h2><%= t('total_nominal_weight_of_stored_pipes') %>:<%= @total_pipe_weight.to_s + ' ' + t('kg', default: 'kg') %> </h2>
 
+<hr>
+
+<h1><%= t('raw_material_store') %></h1>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th><%= t('type', default: "Pipe Type") %></th>
+      <th><%= t('amount', default: "Amount")  %> (<%= t('kg', default:"meter") %>)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @raw_material_types.each do |raw_type| %>
+      <tr>
+        <td><%= raw_type.name %></td>
+        <td><%= RawMaterialInput.sum_amount_by_raw_type(raw_type) - RawMaterialToProductionInput.sum_amount_by_raw_type(raw_type)%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2><%= t('total_nominal_weight_of_stored_raw') %>:<%= @total_raw_weight.to_s + ' ' + t('kg', default: 'kg') %> </h2>
+
+<hr>
+
+<h2><%= RawMaterialInput.all.sum(:amount).to_s + ' ' + t('kg', default: 'kg') %> -- <%= 'جمع مواد ورودی به کارخانه' %></h2>
+<h2><%= TruckScaleOutput.all.sum(:amount).to_s + ' ' + t('kg', default: 'kg') %> -- <%= t('raw_truck_scale_sum') %></h2>
+<h2><%= (RawMaterialInput.all.sum(:amount) -  TruckScaleOutput.all.sum(:amount)).to_s + ' ' + t('kg', default: 'kg') %> -- <%= 'جمع مواد واقعی موجود در کارخانه' %></h2>
 
 <br>
 
