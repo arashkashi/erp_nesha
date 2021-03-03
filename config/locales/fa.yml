@@ -2,6 +2,7 @@ fa:
   hello: "سلام"
   email: "ایمیل"
   password: "پسورد"
+  password_again: "پسورد دوباره"
   login: "ورود"
   sign_up: "ثبت نام"
   welcome: "خوش آمد"
