@@ -12,7 +12,7 @@
 
 <p>
   <strong>Order:</strong>
-  <%= @washer_output.order_id %>
+  <%= @washer_output.order_id? Order.find(@washer_output.order_id).name : "nil" %>
 </p>
 
 <p>

@@ -2,7 +2,7 @@
 
 <p>
   <strong><%= t('project') %>:</strong>
-  <%= Order.find(@truck_scale_output.order_id).name %>
+   <%= (@truck_scale_output.order_id)? Order.find(@truck_scale_output.order_id).name : "nil" %>
 </p>
 
 <p>
