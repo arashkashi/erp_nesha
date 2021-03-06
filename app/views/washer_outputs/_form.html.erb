@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :washer_type_id %>
-    <%= form.text_field :washer_type_id %>
+    <%= form.label t('type', default: 'Type') %>
+    <%= form.collection_select :washer_type_id, WasherType.all.order(:name), :id, :name %>
   </div>
 
   <div class="field">
@@ -22,13 +22,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :order_id %>
-    <%= form.text_field :order_id %>
+    <%= form.label t('order', default: 'Type') %>
+    <%= form.collection_select :order_id, Order.all.order(:name), :id, :name, :include_blank => true %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display: none;">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.text_field :user_id, value: current_user.id, readonly: true %>
   </div>
 
   <div class="actions">

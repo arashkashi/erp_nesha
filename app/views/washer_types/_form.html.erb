@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label t('name') %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display: none">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.text_field :user_id, value: current_user.id %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('record') %>
   </div>
 <% end %>
