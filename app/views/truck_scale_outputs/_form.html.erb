@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label t('project') %>
-    <%= form.collection_select :order_id, Order.all, :id, :name %>
+    <%= form.collection_select :order_id, Order.all, :id, :name, :include_blank => true %>
   </div>
 
   <div class="field">

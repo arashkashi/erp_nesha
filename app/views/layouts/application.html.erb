@@ -18,7 +18,6 @@
     <%# 
     <%= link_to "FA", change_to_fa_path %> 
 
-
     <% if logged_in? -%>
     <%= link_to t('logout', default: "Logout"), :logout, :style => 'float: right' %>
     <%= link_to current_user.name, root_path, :style => 'float: left'  %>

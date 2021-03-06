@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Truck Scale Outputs</h1>
+<h1><%= t('truck_scale_outputs') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Order</th>
-      <th>Amount</th>
-      <th>User</th>
+      <th><%= t('order') %></th>
+      <th><%= t('amount') %></th>
+      <th><%= t('user') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +15,9 @@
   <tbody>
     <% @truck_scale_outputs.each do |truck_scale_output| %>
       <tr>
-        <td><%= truck_scale_output.order_id %></td>
+        <td><%= Order.find(truck_scale_output.order_id).name %></td>
         <td><%= truck_scale_output.amount %></td>
-        <td><%= truck_scale_output.user_id %></td>
+        <td><%= User.find(truck_scale_output.user_id).name %></td>
         <td><%= link_to 'Show', truck_scale_output %></td>
         <td><%= link_to 'Edit', edit_truck_scale_output_path(truck_scale_output) %></td>
         <td><%= link_to 'Destroy', truck_scale_output, method: :delete, data: { confirm: 'Are you sure?' } %></td>
