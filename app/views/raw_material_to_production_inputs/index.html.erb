@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Raw Material To Production Inputs</h1>
+<h1><%= t('raw_material_to_production_input') %></h1>
 
-<table>
+<table class="styled-table">
   <thead>
     <tr>
-      <th>Raw material type</th>
-      <th>Amount</th>
-      <th>User</th>
+      <th><%= t('type') %></th>
+      <th><%= t('kg') %></th>
+      <th><%= t('user') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +15,9 @@
   <tbody>
     <% @raw_material_to_production_inputs.each do |raw_material_to_production_input| %>
       <tr>
-        <td><%= raw_material_to_production_input.raw_material_type_id %></td>
+        <td><%= RawMaterialType.find(raw_material_to_production_input.raw_material_type_id).name %></td>
         <td><%= raw_material_to_production_input.amount %></td>
-        <td><%= raw_material_to_production_input.user_id %></td>
+        <td><%= User.find(raw_material_to_production_input.user_id).name %></td>
         <td><%= link_to 'Show', raw_material_to_production_input %></td>
         <td><%= link_to 'Edit', edit_raw_material_to_production_input_path(raw_material_to_production_input) %></td>
         <td><%= link_to 'Destroy', raw_material_to_production_input, method: :delete, data: { confirm: 'Are you sure?' } %></td>
