@@ -50,6 +50,27 @@
 <h2><%= TruckScaleOutput.all.sum(:amount).to_s + ' ' + t('kg', default: 'kg') %> -- <%= t('raw_truck_scale_sum') %></h2>
 <h2><%= (RawMaterialInput.all.sum(:amount) -  TruckScaleOutput.all.sum(:amount)).to_s + ' ' + t('kg', default: 'kg') %> -- <%= 'جمع مواد واقعی موجود در کارخانه' %></h2>
 
+<hr>
+
+<h1><%= t('washer_store', default: "Washer Store") %></h1>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th><%= t('type', default: "Washer Type") %></th>
+      <th><%= t('amount', default: "Amount")  %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @washer_types.each do |washer_type| %>
+      <tr>
+        <td><%= washer_type.name %></td>
+        <td><%= WasherInput.sum_amount_by_washer_type(washer_type) - WasherOutput.sum_amount_by_washer_type(washer_type) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <br>
 
 

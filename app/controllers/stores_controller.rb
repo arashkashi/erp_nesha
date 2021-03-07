@@ -20,6 +20,8 @@ class StoresController < ApplicationController
 
     @total_raw_weight = temp
 
+    @washer_types = WasherType.all
+
   end
 
   def raw_materials

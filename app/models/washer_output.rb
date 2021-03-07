@@ -16,4 +16,8 @@ class WasherOutput < ApplicationRecord
   validates_with WasherOutputTypeValidator
 
   validates :order_id, presence: false
+
+  def self.sum_amount_by_washer_type(washer_type)
+    WasherOutput.where(washer_type_id: washer_type.id).sum(:amount)
+  end
 end
