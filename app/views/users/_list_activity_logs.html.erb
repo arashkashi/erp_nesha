@@ -1,0 +1,31 @@
+<% if activity_logs.empty? %>
+<h1><%= t('user_has_no_activity') %></h1>
+<% else %>
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th><%= t('name') %></th>
+      <th><%= t('date') %></th>
+      <th><%= t('controller') %></th>
+      <th><%= t('action') %></th>
+      <th><%= t('params') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% activity_logs.each do |activity_log| %>
+    <% temp = JSON.parse(activity_log.params) %>
+    <% params_key = temp.keys[1] %>
+      <tr>
+        <td><%= User.find(activity_log.user_id).name %></td>
+        <td><%= activity_log.created_at.to_date.to_pdate %></td>
+        <td><%= temp['controller'] %></td>
+        <td><%= temp['action'] %></td>
+        <td><%= temp[params_key] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% end %>

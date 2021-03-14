@@ -32,6 +32,8 @@ class PipeStoreOutputsController < ApplicationController
         format.json { render json: @pipe_store_output.errors, status: :unprocessable_entity }
       end
     end
+
+    record_activity
   end
 
   # PATCH/PUT /pipe_store_outputs/1 or /pipe_store_outputs/1.json

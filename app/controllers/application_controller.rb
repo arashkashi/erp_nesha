@@ -21,4 +21,15 @@ class ApplicationController < ActionController::Base
       		redirect_to root_path
     	end
   	end
+
+  	def record_activity
+    	@activity 		= ActivityLog.new
+    	@activity.user 	= User.find(session[:user_id])
+    	@activity.browser = request.env['HTTP_USER_AGENT']
+    	@activity.ip_address = request.env['REMOTE_ADDR']
+    	@activity.controller = controller_name 
+    	@activity.action = action_name 
+    	@activity.params = params.to_json.to_s
+    	@activity.save
+	end
 end

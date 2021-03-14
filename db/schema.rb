@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_151218) do
+ActiveRecord::Schema.define(version: 2021_03_14_135732) do
+
+# Could not dump table "activity_logs" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
 
 # Could not dump table "customers" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
@@ -57,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_151218) do
 # Could not dump table "washer_types" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
 
+  add_foreign_key "activity_logs", "users"
   add_foreign_key "customers", "users"
   add_foreign_key "drivers", "users"
   add_foreign_key "order_items", "orders"

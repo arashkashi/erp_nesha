@@ -6,4 +6,4 @@
 
 <hr>
 
-<%= render :template => "pipe_store_outputs/_show_list", :locals => { :pipe_store_outputs => PipeStoreOutput.all.order("created_at DESC").first(10), :title => t('10_last_records', default: "10 last Records") } %>
+<%= render :template => "pipe_store_outputs/_show_list", :locals => { :pipe_store_outputs => PipeStoreOutput.all.order("created_at DESC").first(20), :title => t('10_last_records', default: "10 last Records") } %>
