@@ -34,4 +34,6 @@
 
 <br>
 
+<%= render :template => "users/_list_activity_logs", :locals => { :activity_logs => ActivityLog.all.order(created_at: :desc).first(50) } %>
+
 

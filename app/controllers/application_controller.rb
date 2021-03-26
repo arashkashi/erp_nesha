@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-	before_action :require_login
+	before_action :application_before_action
 
 	helper_method :current_user
 	helper_method :logged_in?
@@ -15,17 +15,24 @@ class ApplicationController < ActionController::Base
 
 	private
 
-  	def require_login
-    	unless logged_in?
-      		flash[:error] = "You must be logged in to access this section"
-      		redirect_to root_path
-    	end
+    def require_login
+      unless logged_in?
+          flash[:error] = "You must be logged in to access this section"
+          redirect_to root_path
+      end
+    end
+
+  	def application_before_action
+      if session[:user_id]
+        record_activity
+      end
+    	require_login
   	end
 
   	def record_activity
-    	@activity 		= ActivityLog.new
-    	@activity.user 	= User.find(session[:user_id])
-    	@activity.browser = request.env['HTTP_USER_AGENT']
+    	@activity 		     = ActivityLog.new
+    	@activity.user 	   = User.find(session[:user_id])
+    	@activity.browser  = request.env['HTTP_USER_AGENT']
     	@activity.ip_address = request.env['REMOTE_ADDR']
     	@activity.controller = controller_name 
     	@activity.action = action_name 

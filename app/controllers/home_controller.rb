@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-  skip_before_action :require_login
+  skip_before_action :application_before_action
   
   def index
   end
