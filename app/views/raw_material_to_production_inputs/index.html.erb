@@ -20,7 +20,7 @@
       <tr>
         <td><%= RawMaterialType.find(raw_material_to_production_input.raw_material_type_id).name %></td>
         <td><%= raw_material_to_production_input.amount %></td>
-        <td><%= raw_material_to_production_input.production_raw_store_id ? ProductionRawStore.find(raw_material_to_production_input.production_raw_store_id).name : "nil" %> </td>
+        <td><%= raw_material_to_production_input.production_raw_store_id && raw_material_to_production_input.production_raw_store_id != "nil" ? ProductionRawStore.find(raw_material_to_production_input.production_raw_store_id).name : "nil" %> </td>
         <td><%= User.find(raw_material_to_production_input.user_id).name %></td>
         <td><%= link_to 'Show', raw_material_to_production_input %></td>
         <td><%= link_to 'Edit', edit_raw_material_to_production_input_path(raw_material_to_production_input) %></td>

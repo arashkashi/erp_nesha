@@ -11,6 +11,7 @@ This Ansible script will setup a server with the following components
 
 # Run this after cap
 bundle install --path ~
+bundle exec db:migrate
 bundle exec rails assets:precompile RAILS_ENV=production
 passenger-config restart-app
 
@@ -115,6 +116,7 @@ turn the config/environment/production.rb ==>log level to :debug to get more inf
 there are two places to read the logs
 1. the log file on the app folder
 2. the server '''cat /var/log/nginx/error.log'''
+3. when one has an error id '''/tmp/passenger-error-Uzv1tB.html''
 
 and then if the asset problem is still there, restart nginx
 
