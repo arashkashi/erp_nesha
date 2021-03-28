@@ -112,6 +112,10 @@ rails assets:precompile RAILS_ENV=production
 
 turn the config/environment/production.rb ==>log level to :debug to get more information
 
+there are two places to read the logs
+1. the log file on the app folder
+2. the server '''cat /var/log/nginx/error.log'''
+
 and then if the asset problem is still there, restart nginx
 
 maybe we have to set the envirnment '''rails credentials:edit --environment production'''
