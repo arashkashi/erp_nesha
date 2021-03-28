@@ -9,6 +9,12 @@ This Ansible script will setup a server with the following components
 4. PostgreSQL
 5. Sidekiq (Optional)
 
+# Run this after cap
+bundle install --path ~
+bundle exec rails assets:precompile RAILS_ENV=production
+passenger-config restart-app
+
+
 
 # How to use this?
 
@@ -138,6 +144,10 @@ end
 
 
 command '''rails secret'' generates a rails secret key
+
+# Enable and disable caching
+It toggles the caching
+'''$ bin/rails dev:cache'''
 
 
 
