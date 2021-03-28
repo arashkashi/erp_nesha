@@ -14,4 +14,4 @@
 
 <hr>
 
-<%= render :template => "users/_list_activity_logs", :locals => { :activity_logs => ActivityLog.where("user_id = ?", @user.id).order(created_at: :desc).first(50) } %>
+<%= render :template => "users/_list_activity_logs", :locals => { :activity_logs => ActivityLog.where("user_id = ?", @user.id).order(created_at: :desc).first(200) } %>
