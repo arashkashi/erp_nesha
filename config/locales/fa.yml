@@ -82,3 +82,8 @@ fa:
   new_raw_material_to_production_input: "ثبت مواد اولیه تحویل تولید"
   raw_truck_scale_sum: "جمع باسکول خروجی"
   washer_store: "انبار واشر"
+  production_raw_stores: "انبارهای مواد اولیه در قسمت تولید"
+  production_raw_store: "انبار مواد اولیه در قسمت تولید"
+  new_production_raw_store: "انبار مواد جدید در قسمت تولید"
+  new: "جدید"
+  new_record: "ثبت جدید"

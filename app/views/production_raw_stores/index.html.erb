@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('production_raw_stores') %></h1>
+
+<%= link_to t('new_record'), new_production_raw_store_path %>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th><%= t('name') %></th>
+      <th><%= t('user') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @production_raw_stores.each do |production_raw_store| %>
+      <tr>
+        <td><%= production_raw_store.name %></td>
+        <td><%= User.find(production_raw_store.user_id).name %></td>
+        <td><%= link_to 'Show', production_raw_store %></td>
+        <td><%= link_to 'Edit', edit_production_raw_store_path(production_raw_store) %></td>
+        <td><%= link_to 'Destroy', production_raw_store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :production_raw_stores
   resources :raw_material_to_production_inputs
   resources :drivers
   resources :washer_inputs

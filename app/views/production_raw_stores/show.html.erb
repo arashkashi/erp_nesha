@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('name') %>:</strong>
+  <%= @production_raw_store.name %>
+</p>
+
+<p>
+  <strong><%= t('user') %>:</strong>
+  <%= User.find(@production_raw_store.user_id).name %>
+</p>
+
+<%= link_to t('edit'), edit_production_raw_store_path(@production_raw_store) %> |
+<%= link_to t('back'), production_raw_stores_path %>

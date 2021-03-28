@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_135732) do
+ActiveRecord::Schema.define(version: 2021_03_28_103354) do
 
 # Could not dump table "activity_logs" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
@@ -36,11 +36,14 @@ ActiveRecord::Schema.define(version: 2021_03_14_135732) do
 # Could not dump table "pipe_types" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
 
+# Could not dump table "production_raw_stores" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
+
 # Could not dump table "raw_material_inputs" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
 
 # Could not dump table "raw_material_to_production_inputs" because of following StandardError
-#   Unknown type 'uuid' for column 'id'
+#   Unknown type '' for column 'id'
 
 # Could not dump table "raw_material_types" because of following StandardError
 #   Unknown type 'uuid' for column 'id'
@@ -74,8 +77,10 @@ ActiveRecord::Schema.define(version: 2021_03_14_135732) do
   add_foreign_key "pipe_store_outputs", "pipe_types"
   add_foreign_key "pipe_store_outputs", "users"
   add_foreign_key "pipe_types", "users"
+  add_foreign_key "production_raw_stores", "users"
   add_foreign_key "raw_material_inputs", "raw_material_types"
   add_foreign_key "raw_material_inputs", "users"
+  add_foreign_key "raw_material_to_production_inputs", "production_raw_stores"
   add_foreign_key "raw_material_to_production_inputs", "raw_material_types"
   add_foreign_key "raw_material_to_production_inputs", "users"
   add_foreign_key "raw_material_types", "users"

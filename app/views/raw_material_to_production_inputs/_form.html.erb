@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label t('production_raw_store') %>
+    <%= form.collection_select :production_raw_store_id, ProductionRawStore.all, :id, :name %>
+  </div>
+
+  <div class="field">
     <%= form.label t('kg') %>
     <%= form.text_field :amount %>
   </div>
@@ -27,7 +32,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('record') %>
   </div>
 <% end %>
 

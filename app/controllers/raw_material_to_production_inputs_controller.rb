@@ -64,6 +64,6 @@ class RawMaterialToProductionInputsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def raw_material_to_production_input_params
-      params.require(:raw_material_to_production_input).permit(:raw_material_type_id, :amount, :user_id)
+      params.require(:raw_material_to_production_input).permit(:raw_material_type_id, :amount, :user_id, :production_raw_store_id)
     end
 end
