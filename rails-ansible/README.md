@@ -11,9 +11,10 @@ This Ansible script will setup a server with the following components
 
 # Run this after cap
 bundle install --path ~
-bundle exec db:migrate
+bundle exec rails db:migrate
 bundle exec rails assets:precompile RAILS_ENV=production
 passenger-config restart-app
+
 
 
 
