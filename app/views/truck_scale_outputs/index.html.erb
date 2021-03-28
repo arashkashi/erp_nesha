@@ -2,7 +2,7 @@
 
 <h1><%= t('truck_scale_outputs') %></h1>
 
-<table>
+<table class="styled-table">
   <thead>
     <tr>
       <th><%= t('order') %></th>
@@ -15,12 +15,12 @@
   <tbody>
     <% @truck_scale_outputs.each do |truck_scale_output| %>
       <tr>
-        <td><%= Order.find(truck_scale_output.order_id).name %></td>
+        <td><%= truck_scale_output.order_id ? Order.find(truck_scale_output.order_id).name : "nil" %></td>
         <td><%= truck_scale_output.amount %></td>
         <td><%= User.find(truck_scale_output.user_id).name %></td>
-        <td><%= link_to 'Show', truck_scale_output %></td>
-        <td><%= link_to 'Edit', edit_truck_scale_output_path(truck_scale_output) %></td>
-        <td><%= link_to 'Destroy', truck_scale_output, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('show'), truck_scale_output %></td>
+        <td><%= link_to t('edit'), edit_truck_scale_output_path(truck_scale_output) %></td>
+        <td><%= link_to t('destroy'), truck_scale_output, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

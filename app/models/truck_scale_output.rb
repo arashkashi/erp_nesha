@@ -14,5 +14,6 @@ class TruckScaleOutput < ApplicationRecord
   validates_with TruckScaleOutputValidator
 
   validates :order_id, presence: false
+  validates :amount, presence: true
 
 end

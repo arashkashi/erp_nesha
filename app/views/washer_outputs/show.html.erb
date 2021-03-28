@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Washer type:</strong>
-  <%= @washer_output.washer_type_id %>
+  <strong><%= t('type') %></strong>
+  <%= WasherType.find(@washer_output.washer_type_id).name %>
 </p>
 
 <p>
-  <strong>Amount:</strong>
+  <strong><%= t('count') %></strong>
   <%= @washer_output.amount %>
 </p>
 
 <p>
-  <strong>Order:</strong>
-  <%= @washer_output.order_id? Order.find(@washer_output.order_id).name : "nil" %>
+  <strong><%= t('order') %></strong>
+  <%= @washer_output.order_id ? Order.find(@washer_output.order_id).name : "nil" %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @washer_output.user_id %>
+  <strong><%= t('user') %>:</strong>
+  <%= User.find(@washer_output.user_id).name %>
 </p>
 
-<%= link_to 'Edit', edit_washer_output_path(@washer_output) %> |
-<%= link_to 'Back', washer_outputs_path %>
+<%= link_to t('edit'), edit_washer_output_path(@washer_output) %> |
+<%= link_to t('back'), washer_outputs_path %>

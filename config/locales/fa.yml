@@ -32,6 +32,7 @@ fa:
   type: "نوع"
   meter: "متر"
   amount: "مقدار"
+  count: "تعداد"
   enter: "وارد کن"
   record: "ثبت"
   back: "بازگشت"
