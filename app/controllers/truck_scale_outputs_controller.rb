@@ -3,7 +3,7 @@ class TruckScaleOutputsController < ApplicationController
 
   # GET /truck_scale_outputs or /truck_scale_outputs.json
   def index
-    @truck_scale_outputs = TruckScaleOutput.all
+    @truck_scale_outputs = TruckScaleOutput.all.order("created_at DESC")
   end
 
   # GET /truck_scale_outputs/1 or /truck_scale_outputs/1.json

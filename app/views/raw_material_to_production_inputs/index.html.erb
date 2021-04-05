@@ -9,6 +9,7 @@
     <tr>
       <th><%= t('type') %></th>
       <th><%= t('kg') %></th>
+      <th><%= t('date') %></th>
       <th><%= t('production_raw_store') %></th>
       <th><%= t('user') %></th>
       <th colspan="3"></th>
@@ -20,6 +21,7 @@
       <tr>
         <td><%= RawMaterialType.find(raw_material_to_production_input.raw_material_type_id).name %></td>
         <td><%= raw_material_to_production_input.amount %></td>
+        <td><%= raw_material_to_production_input.created_at.to_date.to_pdate %></td>
         <td><%= raw_material_to_production_input.production_raw_store_id && raw_material_to_production_input.production_raw_store_id != "nil" ? ProductionRawStore.find(raw_material_to_production_input.production_raw_store_id).name : "nil" %> </td>
         <td><%= User.find(raw_material_to_production_input.user_id).name %></td>
         <td><%= link_to 'Show', raw_material_to_production_input %></td>

@@ -3,7 +3,7 @@ class RawMaterialInputsController < ApplicationController
 
   # GET /raw_material_inputs or /raw_material_inputs.json
   def index
-    @raw_material_inputs = RawMaterialInput.all
+    @raw_material_inputs = RawMaterialInput.all.order("created_at DESC")
   end
 
   # GET /raw_material_inputs/1 or /raw_material_inputs/1.json

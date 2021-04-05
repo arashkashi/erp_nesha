@@ -3,7 +3,7 @@ class WasherOutputsController < ApplicationController
 
   # GET /washer_outputs or /washer_outputs.json
   def index
-    @washer_outputs = WasherOutput.all
+    @washer_outputs = WasherOutput.all.order("created_at DESC")
   end
 
   # GET /washer_outputs/1 or /washer_outputs/1.json

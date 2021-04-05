@@ -3,7 +3,7 @@ class RawMaterialToProductionInputsController < ApplicationController
 
   # GET /raw_material_to_production_inputs or /raw_material_to_production_inputs.json
   def index
-    @raw_material_to_production_inputs = RawMaterialToProductionInput.all
+    @raw_material_to_production_inputs = RawMaterialToProductionInput.all.order("created_at DESC")
   end
 
   # GET /raw_material_to_production_inputs/1 or /raw_material_to_production_inputs/1.json

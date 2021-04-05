@@ -2,11 +2,14 @@
 
 <h1><%= t('washer_outputs') %></h1>
 
-<table>
+<%= link_to t('new_record'), new_washer_output_path %>
+
+<table class='styled-table'>
   <thead>
     <tr>
       <th><%= t('type') %></th>
       <th><%= t('amount') %></th>
+      <th><%= t('date') %></th>
       <th><%= t('order') %></th>
       <th><%= t('user') %></th>
       <th colspan="3"></th>
@@ -18,6 +21,7 @@
       <tr>
         <td><%= WasherType.find(washer_output.washer_type_id).name %></td>
         <td><%= washer_output.amount %></td>
+        <td><%= washer_output.created_at.to_date.to_pdate %></td>
         <td><%= (washer_output.order_id == "" || washer_output.order_id == nil)? "-" : Order.find(washer_output.order_id).name
           %></td>
         <td><%= User.find(washer_output.user_id).name %></td>
@@ -31,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Washer Output', new_washer_output_path %>
+

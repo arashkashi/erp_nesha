@@ -2,11 +2,14 @@
 
 <h1><%= t('washer_inputs') %></h1>
 
-<table>
+<%= link_to t('new_record'), new_washer_input_path %>
+
+<table class='styled-table'>
   <thead>
     <tr>
       <th><%= t('type') %></th>
       <th><%= t('amount') %></th>
+      <th><%= t('date') %></th>
       <th><%= t('user') %></th>
       <th colspan="3"></th>
     </tr>
@@ -17,6 +20,7 @@
       <tr>
         <td><%= WasherType.find(washer_input.washer_type_id).name %></td>
         <td><%= washer_input.amount %></td>
+        <td><%= washer_input.created_at.to_date.to_pdate %></td>
         <td><%= User.find(washer_input.user_id).name %></td>
         <td><%= link_to 'Show', washer_input %></td>
         <td><%= link_to 'Edit', edit_washer_input_path(washer_input) %></td>
@@ -28,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Washer Input', new_washer_input_path %>
+

@@ -3,7 +3,7 @@ class DriversController < ApplicationController
 
   # GET /drivers or /drivers.json
   def index
-    @drivers = Driver.all
+    @drivers = Driver.all.order("created_at DESC")
   end
 
   # GET /drivers/1 or /drivers/1.json

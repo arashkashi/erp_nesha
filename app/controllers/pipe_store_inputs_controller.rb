@@ -3,7 +3,7 @@ class PipeStoreInputsController < ApplicationController
 
   # GET /pipe_store_inputs or /pipe_store_inputs.json
   def index
-    @pipe_store_inputs = PipeStoreInput.all
+    @pipe_store_inputs = PipeStoreInput.all.order("created_at DESC")
   end
 
   # GET /pipe_store_inputs/1 or /pipe_store_inputs/1.json

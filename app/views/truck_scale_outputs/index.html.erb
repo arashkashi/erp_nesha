@@ -2,11 +2,14 @@
 
 <h1><%= t('truck_scale_outputs') %></h1>
 
+<%= link_to t('new_record'), new_truck_scale_output_path %>
+
 <table class="styled-table">
   <thead>
     <tr>
       <th><%= t('order') %></th>
       <th><%= t('amount') %></th>
+      <th><%= t('date') %></th>
       <th><%= t('user') %></th>
       <th colspan="3"></th>
     </tr>
@@ -17,6 +20,7 @@
       <tr>
         <td><%= truck_scale_output.order_id ? Order.find(truck_scale_output.order_id).name : "nil" %></td>
         <td><%= truck_scale_output.amount %></td>
+        <td><%= truck_scale_output.created_at.to_date.to_pdate %></td>
         <td><%= User.find(truck_scale_output.user_id).name %></td>
         <td><%= link_to t('show'), truck_scale_output %></td>
         <td><%= link_to t('edit'), edit_truck_scale_output_path(truck_scale_output) %></td>
@@ -28,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Truck Scale Output', new_truck_scale_output_path %>
+

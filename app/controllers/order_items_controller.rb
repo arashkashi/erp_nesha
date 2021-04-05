@@ -3,7 +3,7 @@ class OrderItemsController < ApplicationController
 
   # GET /order_items or /order_items.json
   def index
-    @order_items = OrderItem.all
+    @order_items = OrderItem.all.order("created_at DESC")
   end
 
   # GET /order_items/1 or /order_items/1.json
