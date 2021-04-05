@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'delegates/pipe_store'
   resources :production_raw_stores
   resources :raw_material_to_production_inputs
   resources :drivers
