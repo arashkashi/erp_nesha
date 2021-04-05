@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_103354) do
+ActiveRecord::Schema.define(version: 2021_04_05_035823) do
 
 # Could not dump table "activity_logs" because of following StandardError
 #   Unknown type 'uuid' for column 'id'

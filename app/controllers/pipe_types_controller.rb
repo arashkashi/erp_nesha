@@ -64,6 +64,6 @@ class PipeTypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pipe_type_params
-      params.require(:pipe_type).permit(:user_id, :name, :weight)
+      params.require(:pipe_type).permit(:user_id, :name, :weight, :size)
     end
 end

@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   def products
-  	@pipe_types = PipeType.all
+  	@pipe_types = PipeType.all.order(:size)
 
     temp = 0
   	@pipe_types.each do |p_type|
